@@ -1,0 +1,56 @@
+<section class="container cadastro mat-elevation-z20 py-4">
+  <h1 class="py-3 text-center">Editar supervisor(a) {{supervisor.spvisor_nome}}
+  </h1>
+  <form #form="ngForm">
+    <div class="inputs">
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Nome do Funcionário</mat-label>
+          <input matInput type="text" [(ngModel)]="supervisor.spvisor_nome" name="spvisor_nome" #spvisor_nome="ngModel"
+            id="spvisor_nome" required minlength="3" placeholder="Digite o nome do supervisor">
+          <mat-error *ngIf="!spvisor_nome.valid && spvisor_nome.touched" class=""> Nome do funcionário é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="spvisor_nome.errors?.['minlength']" class=""> Nome tem que ter ao menos 3 caracteres.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Cidade do funcionário</mat-label>
+          <input matInput type="text" [(ngModel)]="supervisor.spvisor_cidade" name="spvisor_cidade"
+            #spvisor_cidade="ngModel" id="spvisor_cidade" required minlength="3"
+            placeholder="Digite a cidade do supervisor">
+          <mat-error *ngIf="!spvisor_cidade.valid && spvisor_cidade.touched" class=""> Nome da cidade é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="spvisor_cidade.errors?.['minlength']" class=""> Cidade tem que ter ao menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Formação do funcionário</mat-label>
+          <input matInput type="text" [(ngModel)]="supervisor.spvisor_formacao" name="spvisor_formacao"
+            #spvisor_formacao="ngModel" id="spvisor_formacao" required minlength="3"
+            placeholder="Digite a formação do supervisor">
+          <mat-error *ngIf="!spvisor_formacao.valid && spvisor_formacao.touched" class=""> Nome da formação do
+            funcionário é obrigatório.</mat-error>
+          <mat-error *ngIf="spvisor_formacao.errors?.['minlength']" class=""> Cidade tem que ter ao menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="botoes">
+        <button mat-raised-button routerLink="/supervisores" class="btn-cancelar m-2">Cancelar</button>
+        <label class="custom-file-upload mat-raised-button btn-cancelar">
+          <input class="form-control type-file-estilo" type="file" id="formFile" (change)="editarFoto($event)"
+            [disabled]="!supervisorEditado" name="spvisor_foto" matTooltip="Adicione uma foto ao supervisor"
+            matTooltipClass="matTooltip" placeholder="Adicione uma foto ao supervisor">
+          <span><i class="fa fa-cloud-upload"></i> <small class="ms-2">Adicionar foto</small></span>
+        </label>
+        <button mat-raised-button color="accent" class="btn-salvar m-2" [disabled]="!form.form.valid" (click)="editarSupervisor()">Salvar</button>
+      </div>
+    </div>
+  </form>
+</section>

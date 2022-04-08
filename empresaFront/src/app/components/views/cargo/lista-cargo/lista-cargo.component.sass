@@ -1,0 +1,57 @@
+.mat-card
+  background-color: #3f51b5
+  display: flex
+  align-items: center
+  justify-content: space-evenly
+  width: 50%
+  margin-top: 1rem
+  padding: 0.5rem
+  text-align: center
+  color: #f1f1f1
+
+.mat-card:hover
+  background-color: #31419c
+
+.mat-card-title
+  font-size: 1.2rem
+
+.mat-card-subtitle
+  color: #f1f1f1
+  margin-bottom: 0px
+  font-size: 0.8rem
+
+.mat-card-title, .mat-card-subtitle
+  margin: 0.8rem 0
+
+.cargo-nome-atribuicao
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 60%
+  font-weight: 500
+
+.supervisor
+  display: flex
+  text-transform: uppercase
+  letter-spacing: 0.8px
+
+.mat-icon:hover
+  color: #ff4081
+
+pre
+  margin: 0
+
+@media (max-width: 768px)
+  .mat-card
+    width: 80%
+  .botoes-icones
+    display: flex
+    flex-direction: column
+  .mx-2
+    margin: 0.4rem 0
+
+@media (max-width: 425px)
+  .mat-card
+    width: 100%
+  .supervisor
+    flex-direction: column

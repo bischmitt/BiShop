@@ -1,0 +1,37 @@
+<section class="container cadastro mat-elevation-z20 py-4">
+  <h1 class="py-3 text-center">Excluir bonificação</h1>
+  <form>
+    <div class="inputs">
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Descrição</mat-label>
+          <input matInput type="text" readonly [(ngModel)]="bonificacao.bo_descricao" name="bo_descricao">
+        </mat-form-field>
+      </div>
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Data de pagamento</mat-label>
+          <input matInput type="date" readonly [(ngModel)]="bonificacao.bo_data_pagamento" name="bo_data_pagamento">
+        </mat-form-field>
+      </div>
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Valor</mat-label>
+          <input matInput type="text" readonly [(ngModel)]="bonificacao.bo_valor" name="bo_valor" currencyMask
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+        </mat-form-field>
+      </div>
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Status</mat-label>
+          <input matInput type="text" readonly [(ngModel)]="bonificacao.bo_status" name="bo_status">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="botoes">
+      <button mat-raised-button routerLink="/bonificacao/funcionario/{{id_funcionario}}"
+        class="btn-cancelar m-2">Cancelar</button>
+      <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="excluirBonificacao()">Excluir</button>
+    </div>
+  </form>
+</section>

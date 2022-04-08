@@ -1,0 +1,66 @@
+<section class="container mb-5">
+  <h1 class="text-center py-4 mt-3">Supervisores da Bi Shop</h1>
+  <button matTooltip="Cadastrar supervisor" matTooltipClass="matTooltip" routerLink="/supervisor/cadastro" mat-mini-fab
+    color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
+</section>
+
+<main class="container mb-5">
+  <mat-accordion *ngFor="let supervisor of supervisores" multi>
+    <mat-expansion-panel class="example-headers-align mat-elevation-z5">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <!-- <h2 class="pe-3">#{{supervisor.id_supervisor}}</h2> -->
+          <h2>{{supervisor.spvisor_nome}}</h2>
+        </mat-panel-title>
+        <mat-panel-description>
+          <small>{{supervisor.car_nome}}</small>
+          <div *ngIf="supervisor.spvisor_foto == undefined; then fotoDefault; else fotoSupervisor"></div>
+          <ng-template #fotoDefault>
+            <img class="foto me-md-2" src="../../../../../assets/img/person.svg" mat-card-avatar class="avatar-image">
+          </ng-template>
+          <ng-template #fotoSupervisor>
+            <img class="foto me-md-2" src="../../../../../{{supervisor.spvisor_foto}}" mat-card-avatar
+              class="avatar-image">
+          </ng-template>
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      <div class="expansion-content">
+        <div class="expansion-content-item">
+          <div *ngIf="supervisor.spvisor_foto == undefined; then fotoDefaultContainer; else fotoSupervisorContainer">
+          </div>
+          <ng-template #fotoSupervisorContainer>
+            <img class="foto me-md-2" src="../../../../../{{supervisor.spvisor_foto}}">
+          </ng-template>
+          <ng-template #fotoDefaultContainer>
+            <img class="foto me-md-2" src="../../../../../assets/img/person.svg">
+          </ng-template>
+        </div>
+        <div class="text-center expansion-content-item">
+          <h4><b>ID:</b> {{supervisor.id_supervisor}}</h4>
+          <h4><b>Cidade:</b> {{supervisor.spvisor_cidade}}</h4>
+          <h4><b>Cargo:</b> {{supervisor.car_nome}}</h4>
+          <h4><b>Atribuição do cargo:</b> {{supervisor.car_atribuicao}}</h4>
+          <div class="botoes expansion-content-item">
+            <mat-icon matTooltip="Excluir supervisor" matTooltipClass="matTooltip"
+              routerLink="/supervisor/exclusao/{{supervisor.id_supervisor}}" class="mx-2">
+              remove_circle
+            </mat-icon>
+            <mat-icon matTooltip="Editar supervisor" matTooltipClass="matTooltip"
+              routerLink="/supervisor/edicao/{{supervisor.id_supervisor}}" class="mx-2">edit</mat-icon>
+            <!--<mat-icon class="m-2" routerLink="/bonificacao/supervisor/{{supervisor.id_supervisor}}">monetization_on
+            </mat-icon> -->
+          </div>
+          <div class="botoes expansion-content-item">
+            <button mat-raised-button color="accent" class="btn-salvar m-2"
+              routerLink="/supervisor/atribuirCargo/{{supervisor.id_supervisor}}"> Atribuir
+              cargo
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</main>

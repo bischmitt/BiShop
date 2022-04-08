@@ -1,0 +1,66 @@
+<div class="container mat-elevation-z20 mt-5 py-2">
+  <h1 class="py-3 mt-3  text-center">Atribuir cargo para {{supervisor.spvisor_nome}}</h1>
+  <main>
+    <form>
+      <section class="inputs">
+        <h2 class="py-3 text-center">Dados do cargo</h2>
+        <div class="">
+          <mat-form-field appearance="outline" class="py-2">
+            <mat-label>Nome do Cargo</mat-label>
+            <input matInput type="text" [(ngModel)]="cargo.car_nome" name="car_nome"
+              placeholder="Digite o nome do cargo" readonly>
+          </mat-form-field>
+        </div>
+        <div class="">
+          <mat-form-field appearance="outline" class="py-2">
+            <mat-label>Atribuição do Cargo</mat-label>
+            <input matInput type="text" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao"
+              placeholder="Digite a atribuição do cargo" readonly>
+          </mat-form-field>
+        </div>
+      </section>
+    </form>
+    <mat-card class="inputs mat-elevation-z10">
+      <h2 class="card-title py-2 mx-3">Supervisor do cargo {{this.id_cargo}}</h2>
+      <div class="inputs">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Selecione um novo supervisor para o cargo</mat-label>
+          <mat-select [(ngModel)]="supervisorEscolhido" name="cargoSemSupervisorEscolhido"
+            (ngModelChange)="mostrarSupervisor()">
+            <mat-option *ngFor="let supervisor of supervisoresSemCargo" [value]="supervisor">
+              {{supervisor.spvisor_nome}} - {{supervisor.spvisor_formacao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <mat-form-field appearance="outline" class="py-2">
+            <mat-label>Nome do supervisor</mat-label>
+            <input matInput type="text" [(ngModel)]="supervisor.spvisor_nome" name="spvisor_nome"
+              placeholder="Digite o nome do supervisor" readonly>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="py-2">
+            <mat-label>Formação do supervisor</mat-label>
+            <input matInput type="text" [(ngModel)]="supervisor.spvisor_formacao" name="spvisor_formacao"
+              placeholder="Digite a formacao do supervisor" readonly>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="py-2">
+            <mat-label>Cidade do supervisor</mat-label>
+            <input matInput type="text" [(ngModel)]="supervisor.spvisor_cidade" name="spvisor_cidade"
+              placeholder="Digite a cidade do supervisor" readonly>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="botoes">
+        <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="atribuirSupervisor()">Atribuir
+          cargo</button>
+        <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="deixarCargoSemSupervisor()">Deixar
+          supervisor sem cargo</button>
+      </div>
+    </mat-card>
+  </main>
+</div>

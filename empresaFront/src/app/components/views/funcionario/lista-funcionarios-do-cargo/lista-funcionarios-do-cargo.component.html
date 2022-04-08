@@ -1,0 +1,60 @@
+<section class="container mb-5">
+  <h1 class="text-center py-4 mt-3">Funcionários do cargo #{{this.id_cargo}}</h1>
+  <button matTooltip="Cadastrar funcionário" matTooltipClass="matTooltip" routerLink="/funcionario/cadastro"
+    mat-mini-fab color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
+
+</section>
+<main class="container mb-5">
+  <mat-accordion *ngFor="let funcionario of funcionarios" multi>
+    <mat-expansion-panel class="example-headers-align mat-elevation-z5">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2>{{funcionario.func_nome}}</h2>
+        </mat-panel-title>
+        <mat-panel-description>
+          <small>ID{{funcionario.id_funcionario}}</small>
+          <div *ngIf="funcionario.func_foto == undefined; then fotoDefault; else fotoFunc"></div>
+          <ng-template #fotoFunc>
+            <img class="foto me-md-2" src="../../../../../{{funcionario.func_foto}}" mat-card-avatar
+              class="avatar-image">
+          </ng-template>
+          <ng-template #fotoDefault>
+            <img class="foto me-md-2" src="../../../../../assets/img/person.svg" mat-card-avatar class="avatar-image">
+          </ng-template>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="expansion-content">
+        <div class="expansion-content-item">
+          <div *ngIf="funcionario.func_foto == undefined; then fotoDefaultContainer; else fotoFuncContainer"></div>
+          <ng-template #fotoFuncContainer>
+            <img class="foto me-md-2" src="../../../../../{{funcionario.func_foto}}">
+          </ng-template>
+          <ng-template #fotoDefaultContainer>
+            <img class="foto me-md-2" src="../../../../../assets/img/person.svg">
+          </ng-template>
+        </div>
+        <div class="text-center expansion-content-item">
+          <h4><b>ID</b>{{funcionario.id_funcionario}}</h4>
+          <h4><b>Cidade:</b> {{funcionario.func_cidade}}</h4>
+          <!-- <h4><b>Atribuição do cargo:</b> {{funcionario.car_atribuicao}}</h4> -->
+          <div class="botoes expansion-content-item">
+            <mat-icon matTooltip="Excluir funcionário" matTooltipClass="matTooltip"
+              routerLink="/funcionario/exclusao/{{funcionario.id_funcionario}}" class="mx-2">
+              remove_circle
+            </mat-icon>
+            <mat-icon matTooltip="Editar funcionário" matTooltipClass="matTooltip"
+              routerLink="/funcionario/edicao/{{funcionario.id_funcionario}}" class="mx-2">edit</mat-icon>
+            <mat-icon matTooltip="Adicionar bonificação" matTooltipClass="matTooltip" class="m-2"
+              routerLink="/bonificacao/funcionario/{{funcionario.id_funcionario}}">monetization_on
+            </mat-icon>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div class="botoes">
+    <button mat-raised-button (click)="voltar()" class="btn-cancelar">Voltar</button>
+  </div>
+</main>

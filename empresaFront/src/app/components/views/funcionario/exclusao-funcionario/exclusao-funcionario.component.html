@@ -1,0 +1,24 @@
+<section class="container cadastro mat-elevation-z20 py-4">
+  <h1 class="py-3 text-center">Excluir Funcionária(o) {{funcionario.func_nome}} do cargo {{id_cargo}}</h1>
+  <form>
+    <div class="inputs">
+    <div class="">
+      <mat-form-field appearance="outline" class="py-2">
+        <mat-label>Nome do funcionário</mat-label>
+        <input matInput type="text" [(ngModel)]="funcionario.func_nome" readonly name="func_nome">
+      </mat-form-field>
+    </div>
+
+    <div class="">
+      <mat-form-field appearance="outline" class="py-2">
+        <mat-label>Cidade do funcionário</mat-label>
+        <input matInput type="text" [(ngModel)]="funcionario.func_cidade" readonly name="func_cidade">
+      </mat-form-field>
+    </div>
+    </div>
+    <div class="botoes">
+      <button mat-raised-button routerLink="/funcionarios/comCargo" class="btn-cancelar m-2">Cancelar</button>
+      <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="excluirFuncionario()">Excluir</button>
+    </div>
+  </form>
+</section>

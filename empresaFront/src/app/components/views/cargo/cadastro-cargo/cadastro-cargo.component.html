@@ -1,0 +1,48 @@
+<section class="container cadastro mat-elevation-z20 py-4">
+  <h1 class="py-3 text-center">Cadastrar Cargo</h1>
+  <form #form="ngForm">
+    <div class="inputs">
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Nome do Cargo</mat-label>
+          <input matInput type="text" [(ngModel)]="cargo.car_nome" name="car_nome" placeholder="Digite o nome do cargo"
+            required minlength="3" maxlength="50" #car_nome="ngModel" id="car_nome">
+          <!--  <mat-error [hidden]="car_name.valid || car_name.pristine" class=""> Nome do cargo é obrigatório</mat-error> -->
+          <mat-error *ngIf="!car_nome.valid && car_nome.touched"> Nome do cargo é obrigatório.</mat-error>
+          <mat-error *ngIf="car_nome.errors?.['minlength']"> Nome tem que ter ao menos 3 caracteres</mat-error>
+        </mat-form-field>
+      </div>
+      <!--       <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Descrição do Cargo</mat-label>
+          <input matInput type="text" [(ngModel)]="cargo.car_atribuicao" name="car_descricao" required minlength="3"
+            #car_descricao="ngModel" id="car_descricao" placeholder="Digite a descrição do cargo">
+          <mat-error *ngIf="!car_descricao.valid && car_descricao.touched" class=""> Nome do cargo é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="car_descricao.errors?.['minlength']" class=""> Nome tem que ter ao menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+      </div> -->
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2" >
+          <mat-label>Descrição do Cargo</mat-label>
+          <input matInput type="text" [(ngModel)]="cargo.car_atribuicao" name="car_descricao" required minlength="3"
+            #car_descricao="ngModel" id="car_descricao" placeholder="Digite a descrição do cargo" [class.has-success]="car_descricao.valid"
+            [class.has-error]="!car_descricao.valid && car_descricao.touched" >
+
+          <mat-error *ngIf="!car_descricao.valid && car_descricao.touched" class=""> Nome do cargo é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="car_descricao.errors?.['minlength']" class=""> Nome tem que ter ao menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="botoes">
+      <button mat-raised-button routerLink="/cargos" class="btn-cancelar m-2">Cancelar</button>
+      <button mat-raised-button type="reset" class="btn-cancelar m-2">Limpar</button>
+      <button mat-raised-button color="accent" matTooltip="Cadastrar Cargo" matTooltipClass="matTooltip"
+        class="btn-salvar m-2" (click)="cadastrarCargo()" [disabled]="!form.form.valid">Cadastrar</button>
+    </div>
+  </form>
+</section>

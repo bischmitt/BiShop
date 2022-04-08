@@ -1,0 +1,26 @@
+<section class="container cadastro mat-elevation-z20 py-4">
+  <h1 class="py-3 text-center">Excluir Cargo</h1>
+
+  <form>
+    <div class="inputs">
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Descrição do Cargo</mat-label>
+          <input matInput type="text" [(ngModel)]="cargo.car_atribuicao" readonly name="car_descricao"
+            placeholder="Placeholder">
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Nome do Cargo</mat-label>
+          <input matInput type="text" [(ngModel)]="cargo.car_nome" readonly name="car_nome" placeholder="Placeholder">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="botoes">
+      <button mat-raised-button routerLink="/cargos" class="btn-cancelar m-2">Cancelar</button>
+      <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="excluirCargo()">Excluir</button>
+    </div>
+  </form>
+</section>

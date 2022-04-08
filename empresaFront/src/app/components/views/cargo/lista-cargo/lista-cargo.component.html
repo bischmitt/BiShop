@@ -1,0 +1,29 @@
+<section class="container">
+  <h1 class="text-center py-4 mt-3">Cargos da Bi Shop</h1>
+  <button matTooltip="Cadastrar cargo" matTooltipClass="matTooltip" routerLink="/cargo/cadastro" class="mb-2"
+    mat-mini-fab color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
+  <mat-card class="mat-elevation-z5" *ngFor="let cargo of cargos">
+    <div>
+      <mat-card-title>#{{cargo.id_cargo}}</mat-card-title>
+    </div>
+    <div class="cargo-nome-atribuicao">
+      <mat-card-title>{{cargo.car_nome}}</mat-card-title>
+      <mat-card-subtitle>{{cargo.car_atribuicao}}</mat-card-subtitle>
+      <mat-card-subtitle class="supervisor">Supervisor(a): {{cargo.spvisor_nome}}</mat-card-subtitle>
+    </div>
+    <div class="botoes-icones">
+      <mat-icon matTooltip="Funcionários no cargo" matTooltipClass="matTooltip"
+        routerLink="/funcionarios/listaDoCargo/{{cargo.id_cargo}}" class="mx-2">groups
+      </mat-icon>
+      <mat-icon matTooltip="Supervisor do cargo" matTooltipClass="matTooltip"
+        routerLink="/supervisor/supervisorDoCargo/{{cargo.id_cargo}}" class="mx-2">person
+      </mat-icon>
+      <mat-icon matTooltip="Excluir cargo" matTooltipClass="matTooltip" routerLink="/cargo/exclusao/{{cargo.id_cargo}}"
+        class="mx-2">remove_circle</mat-icon>
+      <mat-icon matTooltip="Editar cargo" matTooltipClass="matTooltip" routerLink="/cargo/edicao/{{cargo.id_cargo}}"
+        class="mx-2">edit</mat-icon>
+    </div>
+  </mat-card>
+</section>

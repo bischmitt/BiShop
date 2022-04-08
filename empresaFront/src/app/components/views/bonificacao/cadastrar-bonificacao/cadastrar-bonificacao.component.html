@@ -1,0 +1,57 @@
+<section class="container cadastro mat-elevation-z20 py-4">
+  <h1 class="py-3 text-center">Cadastrar Bonificação</h1>
+  <form #form="ngForm">
+    <div class="inputs">
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Descrição</mat-label>
+          <input matInput type="text" [(ngModel)]="bonificacao.bo_descricao" name="bo_descricao" required
+            #bo_descricao="ngModel" id="bo_descricao" minlength="4" placeholder="Digite a descrição do cargo">
+          <mat-error *ngIf="!bo_descricao.valid && bo_descricao.touched" class=""> Descrição da bonificação é
+            obrigatória.</mat-error>
+          <mat-error *ngIf="bo_descricao.errors?.['minlength']" class=""> Nome tem que ter ao menos 4
+            caracteres
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Data de pagamento</mat-label>
+          <input matInput type="date" [(ngModel)]="bonificacao.bo_data_pagamento" name="bo_data_pagamento" required
+            #bo_data_pagamento="ngModel" id="bo_data_pagamento"
+            placeholder="Selecione a data de pagamento da bonificação">
+          <mat-error *ngIf="!bo_data_pagamento.valid && bo_data_pagamento.touched" class=""> Data inválida</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Valor</mat-label>
+          <input matInput type="text" [(ngModel)]="bonificacao.bo_valor" name="bo_valor" currencyMask required
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" #bo_valor="ngModel" id="bo_valor"
+            minlength="20" placeholder="Digite o valor, em R$, da bonificação">
+          <mat-error *ngIf="!bo_valor.valid && bo_valor.touched" class=""> Descrição da bonificação é
+            obrigatória.</mat-error>
+          <mat-error *ngIf="bo_valor.errors?.['minlength']" class=""> Nome tem que ter ao menos 2 caracteres
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-form-field appearance="outline" class="py-2">
+          <mat-label>Status</mat-label>
+          <input matInput type="text" readonly value="PENDENTE" name="bo_status">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="botoes">
+      <button mat-raised-button routerLink="/bonificacao/funcionario/{{id_funcionario}}"
+        class="btn-cancelar m-2">Cancelar</button>
+      <button mat-raised-button color="accent" class="btn-salvar m-2" [disabled]="!form.form.valid"
+        (click)="cadastrarBonificacao()">Cadastrar</button>
+    </div>
+
+  </form>
+</section>
