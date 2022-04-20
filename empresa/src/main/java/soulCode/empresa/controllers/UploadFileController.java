@@ -33,8 +33,8 @@ public class UploadFileController {
 
         String fileName = nome;
 
-        String uploadDir = "/home/bischmitt/Documentos/SoulCode/Projetos/BiShop/empresaFront/src/assets/img/supervisor";
-
+        String uploadDir = "/home/bianca/Documentos/SoulCode/Projetos/BiShop/empresaFront/src/assets/img/supervisor";
+        
         /* String nomeMaisCaminho = "c:" + uploadDir + "/" + nome; */
 
         String nomeMaisCaminho = "assets/img/supervisor/" + nome;
@@ -58,7 +58,7 @@ public class UploadFileController {
 
         String fileName = nome;
 
-        String uploadDir = "/home/bischmitt/Documentos/SoulCode/AulasSoulCode/Java/empresaFront/src/assets/img/funcionario";
+        String uploadDir = "/home/bianca/Documentos/SoulCode/Projetos/BiShop/empresaFront/src/assets/img/funcionario";
 
         /* String nomeMaisCaminho = "c:" + uploadDir + "/" + nome; */
 
