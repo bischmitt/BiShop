@@ -1,4 +1,7 @@
 # BiShop
+
+## Escopo
+
 Sistema de controle de funcionários desenvolvido com as tecnologias Angular, Java e MySQL.
 
 Employee control system developped with Angular, Java and MySQL technologies.
@@ -16,31 +19,31 @@ Employee control system developped with Angular, Java and MySQL technologies.
 
 #### Home
 
-<img src='front/src/assets/img/readme-images/bishop-home.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-home.png'>
 
 #### Lista de Cargos
 
-<img src='front/src/assets/img/readme-images/bishop-cargos.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-cargos.png'>
 
 #### Lista de funcionários
 
-<img src='front/src/assets/img/readme-images/bishop-funcionarios.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-funcionarios.png'>
 
 #### Validação
 
-<img src='front/src/assets/img/readme-images/bishop-validacao.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-validacao.png'>
 
 #### Bonificações
 
-<img src='front/src/assets/img/readme-images/bishop-bonificacoes.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-bonificacoes.png'>
 
 #### Atribuição de cargo
 
-<img src='front/src/assets/img/readme-images/bishop-atribuir-cargo.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-atribuir-cargo.png'>
 
 #### Atribuição de supervisão
 
-<img src='front/src/assets/img/readme-images/bishop-atribuir-supervisao.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-atribuir-supervisao.png'>
 
 
 ##### ©2022 - Bianca Klein Schmitt
