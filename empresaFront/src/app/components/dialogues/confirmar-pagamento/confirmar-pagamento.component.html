@@ -1,9 +1,0 @@
-<h2 mat-dialog-title align="center">Deseja pagar bonificação ao funcionário?</h2>
-
-<mat-dialog-actions align="end">
-  <button mat-raised-button class="btn-cancelar m-2" [mat-dialog-close]="true">Voltar</button>
-  <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="cancelarBonificacao(bonificacao.codigo)"
-    *ngIf="bonificacao.bo_status == 'PENDENTE'">Cancelar Bonificação</button>
-  <button mat-raised-button color="accent" class="btn-salvar m-2" (click)="quitarBonificacao(bonificacao.codigo)"
-    *ngIf="bonificacao.bo_status == 'PENDENTE'">Pagar bonificação</button>
-</mat-dialog-actions>

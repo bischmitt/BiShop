@@ -1,17 +1,4 @@
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatCardModule } from '@angular/material/card';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSelectModule } from '@angular/material/select';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
-import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
-import { MaterialFileInputModule } from 'ngx-material-file-input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { AngularMaterialModule } from './shared/angular-material.module';
 
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -50,7 +37,6 @@ import { CadastrarBonificacaoComponent } from './components/views/bonificacao/ca
 import { ListaBonificacaoFuncionariosComponent } from './components/views/bonificacao/lista-bonificacao-funcionarios/lista-bonificacao-funcionarios.component';
 import { EdicaoBonificacaoComponent } from './components/views/bonificacao/edicao-bonificacao/edicao-bonificacao.component';
 import { ExclusaoBonificacaoComponent } from './components/views/bonificacao/exclusao-bonificacao/exclusao-bonificacao.component';
-import { ConfirmarPagamentoComponent } from './components/dialogues/confirmar-pagamento/confirmar-pagamento.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +64,6 @@ import { ConfirmarPagamentoComponent } from './components/dialogues/confirmar-pa
     ListaBonificacaoFuncionariosComponent,
     EdicaoBonificacaoComponent,
     ExclusaoBonificacaoComponent,
-    ConfirmarPagamentoComponent,
 
   ],
   imports: [
@@ -89,20 +74,7 @@ import { ConfirmarPagamentoComponent } from './components/dialogues/confirmar-pa
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatExpansionModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MaterialFileInputModule,
-    MatDatepickerModule,
-    MatTooltipModule
+    AngularMaterialModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt_BR' },
   { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },

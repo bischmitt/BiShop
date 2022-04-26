@@ -1,26 +1,22 @@
 section
-  display: flex
-  flex-direction: row
-  align-content: center
-  justify-content: center
   margin: auto
-  align-items: center
   height: 70vh
   width: 90vw
   text-align: center
   margin-top: 2rem
+  background: url("../../../assets/img/img.png")
+  background-repeat: no-repeat
+  background-size: cover
+  opacity: 0.95
 
 .mat-card
-  padding: 2rem
-  margin-right: 2rem
+  // background: #f0e6e69c
+  background: #f0cbd69d
 
 @media (max-width: 2800px)
   section
     height: 68vh
     justify-content: space-around
-
-  img
-    width: 35vw
 
   h1
     font-size: 2rem
@@ -38,27 +34,39 @@ section
 @media (max-width: 1024px)
   section
     height: 80vh
-    padding: 1rem
-    flex-direction: column
 
   .mat-card
     margin-right: 0rem
-    padding: 3rem 1rem
-    margin-top: 5rem
-
-  img
-    width: 80vw
+    padding: 3rem 1.5rem
 
 @media (max-width: 768px)
   section
-    margin-bottom: 7rem
-  .mat-card
-    margin-top: 2rem
+    margin-top: 3rem
+    margin-bottom: 3rem
 
 @media (max-width: 425px)
+  h1
+    font-size: 1.8rem
+
+  h3
+    font-size: 1.4rem
+
+  h4
+    font-size: 1rem
+
   .mat-card
-    margin-top: 1rem
-  section
-    height: 70vh
-  img
-    width: 85vw
+    padding: 2rem 1rem
+    width: 22rem
+
+@media (max-width: 375px)
+  h1
+    font-size: 1.6rem
+
+  h3
+    font-size: 1rem
+
+  h4
+    font-size: 0.8rem
+
+  .mat-card
+    width: 16rem

@@ -6,7 +6,6 @@ import { Bonificacao } from 'src/app/models/bonificacaoModel';
 import { BonificacaoService } from 'src/app/services/bonificacao.service';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmarPagamentoComponent } from 'src/app/components/dialogues/confirmar-pagamento/confirmar-pagamento.component';
 
 @Component({
   selector: 'app-lista-bonificacao-funcionarios',
@@ -49,13 +48,6 @@ export class ListaBonificacaoFuncionariosComponent implements OnInit {
   ngOnInit(): void {
     this.listarBonificacaoDoFuncionario()
     this.buscarFuncionario()
-  }
-
-  openDialog(codigo: any) {
-    const dialogRef = this.dialog.open(ConfirmarPagamentoComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 
   listarBonificacaoDoFuncionario() {

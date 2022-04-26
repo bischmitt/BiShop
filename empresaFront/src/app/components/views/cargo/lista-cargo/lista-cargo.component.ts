@@ -61,7 +61,4 @@ export class ListaCargoComponent implements OnInit {
   navegarCadastroCargo() {
     this.router.navigate(['/cargo/cadastro'])
   }
-
-  deletarCargo(id: any) {
-  }
 }
