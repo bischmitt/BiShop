@@ -23,7 +23,7 @@ Employee control system developped with Angular, Java and MySQL technologies.
 
 #### Lista de Cargos
 
-<img src='empresaFront/src/assets/img/readme-images/bishop-cargo.png'>
+<img src='empresaFront/src/assets/img/readme-images/bishop-cargos.png'>
 
 #### Lista de funcionários
 
