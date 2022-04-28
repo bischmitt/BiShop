@@ -5,11 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { NgxCurrencyModule } from "ngx-currency";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxCurrencyModule } from 'ngx-currency';
 import localePt from '@angular/common/locales/pt';
-import {CurrencyPipe, registerLocaleData} from '@angular/common';
-registerLocaleData(localePt)
+import { CurrencyPipe, registerLocaleData } from '@angular/common';
+registerLocaleData(localePt);
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
@@ -38,7 +38,9 @@ import { CadastrarBonificacaoComponent } from './components/views/bonificacao/ca
 import { ListaBonificacaoFuncionariosComponent } from './components/views/bonificacao/lista-bonificacao-funcionarios/lista-bonificacao-funcionarios.component';
 import { EdicaoBonificacaoComponent } from './components/views/bonificacao/edicao-bonificacao/edicao-bonificacao.component';
 import { ExclusaoBonificacaoComponent } from './components/views/bonificacao/exclusao-bonificacao/exclusao-bonificacao.component';
-
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptorService } from './loader-interceptor/loader-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +67,7 @@ import { ExclusaoBonificacaoComponent } from './components/views/bonificacao/exc
     ListaBonificacaoFuncionariosComponent,
     EdicaoBonificacaoComponent,
     ExclusaoBonificacaoComponent,
-
+    LoaderComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -76,11 +78,19 @@ import { ExclusaoBonificacaoComponent } from './components/views/bonificacao/exc
     FormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    CoreModule
+    CoreModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt_BR' },
-  { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
-    CurrencyPipe],
-  bootstrap: [AppComponent]
+  providers: [
+    LoaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true,
+    },
+    { provide: LOCALE_ID, useValue: 'pt_BR' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    CurrencyPipe,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
