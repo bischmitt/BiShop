@@ -6,12 +6,12 @@ import { LoaderComponent } from '../components/loader/loader.component';
 // import { LoaderInterceptorService } from './loader-interceptor/loader-interceptor.service';
 @NgModule({
   declarations: [
-    Erro404Component,
+    //Erro404Component,
     // LoaderComponent
   ],
   imports: [
     RouterModule.forChild([
-      { path: '**', component:Erro404Component},
+      //{ path: '**', component:Erro404Component},
     ]),
 
   ],

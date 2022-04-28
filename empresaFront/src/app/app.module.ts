@@ -1,3 +1,4 @@
+import { CoreRoutingModule } from './core/core-routing.module';
 import { AngularMaterialModule } from './shared/angular-material.module';
 
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
@@ -41,6 +42,7 @@ import { ExclusaoBonificacaoComponent } from './components/views/bonificacao/exc
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptorService } from './loader-interceptor/loader-interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +76,7 @@ import { LoaderInterceptorService } from './loader-interceptor/loader-intercepto
     BrowserModule,
     NgxCurrencyModule,
     AppRoutingModule,
+    CoreRoutingModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
