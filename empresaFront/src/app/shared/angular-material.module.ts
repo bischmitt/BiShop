@@ -42,7 +42,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 @NgModule({
   exports: [
@@ -91,6 +92,8 @@ import {MatFormFieldModule} from '@angular/material/form-field'
     PortalModule,
     ScrollingModule,
     MatFormFieldModule,
+    MatProgressBarModule
+
   ],
   declarations: [
 

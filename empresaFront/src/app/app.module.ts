@@ -12,6 +12,7 @@ import {CurrencyPipe, registerLocaleData} from '@angular/common';
 registerLocaleData(localePt)
 
 import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { ListaCargoComponent } from './components/views/cargo/lista-cargo/lista-cargo.component';
 import { HeaderComponent } from './components/templates/header/header.component';
@@ -74,7 +75,8 @@ import { ExclusaoBonificacaoComponent } from './components/views/bonificacao/exc
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    CoreModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt_BR' },
   { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },

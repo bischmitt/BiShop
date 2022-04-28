@@ -4,6 +4,14 @@
     routerLink="/bonificacao/cadastro/{{id_funcionario}}" mat-mini-fab color="accent" class="mb-3">
     <mat-icon>add</mat-icon>
   </button>
+
+  <div class="d-flex m-auto justify-content-center">
+    <mat-form-field appearance="outline" class="py-2">
+      <mat-label>Filtrar</mat-label>
+      <input matInput [(ngModel)]="filter" placeholder="Ex. Meta de janeiro...">
+    </mat-form-field>
+  </div>
+
   <div class="div-table mat-elevation-z15" style="overflow-x: auto;">
     <table mat-table [dataSource]="bonificacoes" class="mat-elevation-z20">
       <!-- Código Column -->
